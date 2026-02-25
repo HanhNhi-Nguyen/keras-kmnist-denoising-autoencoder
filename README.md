@@ -1,18 +1,18 @@
 # Keras KMNIST Denoising Autoencoder (TensorFlow / Keras)
 
-This repository contains a publishable version of an advanced project completed as part of my degree program (*Vertiefungsprojekt*).
+This repository contains a standalone implementation of a CNN-based denoising autoencoder developed in the context of my university advanced project (Vertiefungsprojekt, B.Sc. Electrical and Information Engineering, University of Bremen).
 
-It demonstrates a **reproducible Python ML pipeline** for **image denoising** using a small **CNN autoencoder** on the public **KMNIST** dataset.
+It demonstrates a reproducible Python ML pipeline for image denoising using a small CNN autoencoder on the public KMNIST dataset.
 
 The focus of this public version is the Python-based training, evaluation, and quantization workflow. Hardware-specific deployment components (e.g., embedded C++ integration) are intentionally not included.
 
 ## What this version of the project does
 
-- Loads **KMNIST** via `tensorflow_datasets`
-- Creates *(noisy input, clean target)* pairs using **deterministic stateless Gaussian noise**
-- Trains a compact **convolutional autoencoder** (Conv2D + Conv2DTranspose)
-- Converts the trained model to **fully INT8 quantized TFLite** using a representative dataset
-- Runs a **desktop sanity-check** with a TFLite interpreter and visualizes reconstructions
+- Loads KMNIST via `tensorflow_datasets`
+- Creates *(noisy input, clean target)* pairs using deterministic stateless Gaussian noise
+- Trains a compact convolutional autoencoder (Conv2D + Conv2DTranspose)
+- Converts the trained model to fully INT8 quantized TFLite using a representative dataset
+- Runs a desktop sanity-check with a TFLite interpreter and visualizes reconstructions
 
 ## Model Architecture
 
@@ -26,11 +26,11 @@ The architecture is intentionally compact (~4.8k parameters) to keep the pipelin
 
 ## Training Setup
 
-- Optimizer: **Adam**
-- Loss function: **Mean Squared Error (MSE)**
-- Epochs: **5**
-- Input size: **28×28 grayscale**
-- Gaussian noise standard deviation: **0.35**
+- Optimizer: Adam
+- Loss function: Mean Squared Error (MSE)
+- Epochs: 5
+- Input size: 28×28 grayscale
+- Gaussian noise standard deviation: 0.35
 
 Randomness is controlled using stateless TensorFlow operations so that each dataset index always receives the same noise pattern.
 
@@ -38,7 +38,7 @@ Randomness is controlled using stateless TensorFlow operations so that each data
 
 Model quality is evaluated using:
 
-- Reconstruction **MSE**
+- Reconstruction MSE
 - Visual comparison between:
   - clean input
   - noisy input
@@ -82,10 +82,11 @@ python -m src.evaluate_tflite_int8
 
 ## Notes
 
-- Default training is **5 epochs** (kept intentionally short).
-- The noise generation is **deterministic**: each sample index always receives the same noise pattern.
+- Default training is 5 epochs (kept intentionally short).
+- The noise generation is deterministic: each sample index always receives the same noise pattern.
 - The code is split from the original Colab notebook into small files for readability.
 
 ## Academic Context
 
-This project was developed as part of an advanced project (*Vertiefungsprojekt*) at University of Bremen under the supervision of Prof. Dr. Alberto Garcia-Ortiz.
+The original concept was developed as part of my advanced project/Vertiefungsprojekt at the University of Bremen.  
+This repository represents a cleaned and independent implementation prepared for public demonstration purposes.
