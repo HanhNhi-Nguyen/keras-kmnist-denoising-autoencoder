@@ -17,4 +17,6 @@ ENV/
 
 # Outputs
 export_int8/
-results/
+results/*
+!results/figures/
+!results/figures/*.png
