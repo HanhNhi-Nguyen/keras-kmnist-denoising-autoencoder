@@ -50,8 +50,8 @@ The INT8 model is additionally checked via TFLite operator inspection to confirm
 Below is a qualitative comparison between clean input, noisy input,
 float reconstruction, and INT8 TFLite reconstruction.
 
-![Reconstruction Example](results/figures/reconstruction_example.png)
-
+![Example](results/figures/reconstruction_example.png)
+![Example_1](results/figures/reconstruction_example_1.png)
 ## Quick start
 
 Create a virtual environment and install dependencies:
