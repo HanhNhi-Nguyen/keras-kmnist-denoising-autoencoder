@@ -4,6 +4,8 @@ This repository is a cleaned version of my *Vertiefungsprojekt* notebook.
 
 It demonstrates a **reproducible Python ML pipeline** for **image denoising** using a small **CNN autoencoder** on the public **KMNIST** dataset.
 
+The focus of this public version is the Python-based training, evaluation, and quantization workflow. Hardware-specific deployment components (e.g., embedded C++ integration) are intentionally not included.
+
 ## What this version of the project does
 
 - Loads **KMNIST** via `tensorflow_datasets`
