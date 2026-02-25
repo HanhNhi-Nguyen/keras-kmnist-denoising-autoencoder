@@ -41,7 +41,7 @@ def main():
     mse = np.mean((y_hat - x_clean.numpy())**2)
     print("INT8 TFLite recon MSE (on", num_eval, "samples):", mse)
 
-    # Qualitative plots (same logic as in notebook)
+    # Debug plots
     num_show = 6
     x_noisy, x_clean = next(iter(ds_test.unbatch().batch(num_show)))
 
@@ -74,20 +74,6 @@ def main():
     for i in range(num_show):
         show_row(i)
 
-    # Optional bottleneck visualization (kept as in notebook, but not called by default)
-    # def show_bottleneck_grid(i):
-    #     chans = z[i]  # (7,7,16)
-    #     fig, ax = plt.subplots(4, 4, figsize=(6, 6))
-    #     k = 0
-    #     for r in range(4):
-    #         for c in range(4):
-    #             ax[r, c].imshow(chans[:, :, k], cmap="gray")
-    #             ax[r, c].axis("off")
-    #             ax[r, c].set_title(f"z{k}", fontsize=8)
-    #             k += 1
-    #     plt.suptitle("Encoded representation (bottleneck feature maps)")
-    #     plt.tight_layout()
-    #     plt.show()
 
 if __name__ == "__main__":
     main()

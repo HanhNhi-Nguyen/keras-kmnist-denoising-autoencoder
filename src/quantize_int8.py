@@ -32,7 +32,7 @@ def main():
 
     print("Saved:", tflite_path, "size:", len(tflite_int8), "bytes")
 
-    # Print operator list (for embedded / resolver auditing)
+    # Print operator list (for embedded )
     tf.lite.experimental.Analyzer.analyze(model_path=tflite_path)
 
 if __name__ == "__main__":
