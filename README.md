@@ -85,3 +85,7 @@ python -m src.evaluate_tflite_int8
 - Default training is **5 epochs** (kept intentionally short).
 - The noise generation is **deterministic**: each sample index always receives the same noise pattern.
 - The code is split from the original Colab notebook into small files for readability.
+
+## Academic Context
+
+This project was developed as part of an advanced project (*Vertiefungsprojekt*) at University of Bremen under the supervision of Prof. Dr. Alberto Garcia-Ortiz.
