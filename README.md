@@ -1,6 +1,6 @@
 # Keras KMNIST Denoising Autoencoder (TensorFlow / Keras)
 
-This repository is a cleaned version of my *Vertiefungsprojekt* notebook.
+This repository contains a publishable version of an advanced project completed as part of my degree program (*Vertiefungsprojekt*).
 
 It demonstrates a **reproducible Python ML pipeline** for **image denoising** using a small **CNN autoencoder** on the public **KMNIST** dataset.
 
